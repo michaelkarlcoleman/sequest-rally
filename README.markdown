@@ -1,4 +1,5 @@
 README for sequest-rally
+========================
 
 This is an adaption of greylag's scheduler to run SEQUEST
 (specifically, the Yates' labs version).
@@ -14,14 +15,15 @@ production at SIMR.
 ============================================================
 
 ORIGINAL REQUIREMENTS
+---------------------
 
 * Must handle arbitrary errors on nodes, due to (for
   example) warewulf filesystem update problems, filesystems
   full or missing, etc.
 
-  Jan 23 17:01:50 [840] WARNING: node0005:20081 gave 'error got error 'sh: error while loading shared libraries: libtermcap.so.2: cannot open shared object file: Permission denied'
+> Jan 23 17:01:50 [840] WARNING: node0005:20081 gave 'error got error 'sh: error while loading shared libraries: libtermcap.so.2: cannot open shared object file: Permission denied'
 
-  Jan 23 17:01:55 [840] WARNING: node0007:20078 gave 'error [<type 'exceptions.OSError'> "[Errno 13] Permission denied: '/tmp/sequest-chase558_Yf'"]'
+> Jan 23 17:01:55 [840] WARNING: node0007:20078 gave 'error [<type 'exceptions.OSError'> "[Errno 13] Permission denied: '/tmp/sequest-chase558_Yf'"]'
 
 * Must handle nodes repeatedly disappearing and reappearing
   during runs.
@@ -48,6 +50,7 @@ ORIGINAL REQUIREMENTS
 ============================================================
 
 ANNOUNCEMENT
+------------
 
 The program 'sequest-rally', which is a replacement for PDQ
 ('sequest-process') is ready for testing.  It has a number
@@ -66,8 +69,10 @@ Here is the least that you need to know to get started:
 
 1.  Run it like so:
 
+```
     $ sequest-rally -v -l sequest.log *.ms2 &
     $ tail -F sequest.log
+```
 
 If you need to, you can kill it using the 'kill' command (or
 Control-C if you didn't background it with the '&').
@@ -302,7 +307,9 @@ Other details
   cluster).  If not, you can remove the lockfile manually,
   like so:
 
+```
     $ rm -f .lock
+```
 
 - The search times that SEQUEST reports in 'S' lines are
   sometimes incorrect (negative) because of a SEQUEST bug.
@@ -315,7 +322,7 @@ Other details
   stream of error messages in the log and no progress being
   made for long periods.  If you encounter a situation like
   this, please report it.
-
+  
   That notwithstanding, the results should be correct unless
   a fatal error message ("ERROR...") was given.  The SQT
   files are not written until the very end, so if they were
