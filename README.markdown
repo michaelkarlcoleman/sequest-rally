@@ -321,12 +321,11 @@ Other details
   finishing.  Generally in cases like this you will see a
   stream of error messages in the log and no progress being
   made for long periods.  If you encounter a situation like
-  this, please report it.
-  
-  That notwithstanding, the results should be correct unless
-  a fatal error message ("ERROR...") was given.  The SQT
-  files are not written until the very end, so if they were
-  written, they are probably correct.
+  this, please report it.  That notwithstanding, the results
+  should be correct unless a fatal error message
+  ("ERROR...") was given.  The SQT files are not written
+  until the very end, so if they were written, they are
+  probably correct.
 
 - See 'sequest-rally --help' to see what all of the flags
   do.
